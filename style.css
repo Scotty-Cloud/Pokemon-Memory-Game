@@ -1,0 +1,22 @@
+body {
+  background:radial-gradient(#00d4ff, #3a3293);
+  margin: 0;
+  
+}
+
+.game-title {
+  color: yellow;
+  text-align: center;
+  font-size: 36px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  
+}
+
+html {
+  min-height: 100vh;
+}
+
+*{
+  box-sizing: border-box;
+}
