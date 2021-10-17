@@ -5,7 +5,7 @@ body {
 }
 
 .game-title {
-  color: yellow;
+  color: purple;
   text-align: center;
   font-size: 36px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -32,7 +32,7 @@ html {
 
 .gameCard {
   position: relative;
-  background-color: aqua;
+  background: radial-gradient(#3a3293, #100038, #3a3293);
   height: 150px;
   width: 150px;
   border-radius: 5%;
@@ -47,9 +47,47 @@ html {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  border-style: solid;
+  border-width: 1px;
 }
+
+cardBack {
+  
+  border-color: black;
+}
+
+.rocketsBall {
+  position: absolute;
+  width: 57px;
+  height: 37px;
+}
+
+.ballTopLeft {
+  top: 0;
+  left: 0;
+  
+}
+
+
+.ballTopRight {
+  top: 0;
+  right: 0;
+}
+
+
+.ballLowLeft {
+  bottom: 0;
+  left: 0;
+}
+
+.ballLowRight {
+  bottom: 0;
+  right: 0;
+}
+
+
 
 .qMark {
   align-self: flex-start;
-  transform: translateY(5px);
+  transform: translateY(35px);
 }
