@@ -9,7 +9,7 @@ html {
 
 body {
   margin: 0;
-  background: radial-gradient(#00d4ff, #3a3293);
+  background:radial-gradient(#00d4ff, #3a3293);
 }
 
 .gameName {
@@ -81,7 +81,6 @@ body {
 }
 
 .ballTopLeft {
-  transform: rotate(270deg);
   top: 0;
   left: 0;
 }
@@ -92,26 +91,20 @@ body {
 }
 
 .ballBottomLeft {
-  transform: rotate(180deg);
   bottom: 0;
   left: 0;
 }
 
 .ballBottomRight {
-  transform: rotate(90deg);
   bottom: 0;
   right: 0;
 }
 
 .qMarkUnown {
   align-self: flex-start;
-  transition: transform 100ms ease-in-out;
   transform: translateY(35px);
 }
 
-.cardBack:hover .qMarkUnown {
-  transform: translateY(0);
-}
 
 .cardVal {
   position: relative;
@@ -119,61 +112,11 @@ body {
   transform: scale(.9);
 }
 
-.cardFront:hover .cardVal {
-  transform: scale(1);
-}
+
 
 .cardFront {
   background-color: blue;
   border-color: black;
   transform: rotateY(180deg);
-}
-
-.overlay-text {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 100;
-  display: none;
-  position: fixed;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: White;
-  font-family:serif;
-  transition: background-color 500ms, font-size 500ms;
-}
-
-.overlay-text-small {
-  font-size: .3em;
-}
-
-.overlay-text.visible {
-  display: flex;
-  animation: overlay-grow 500ms forwards;
-}
-
-@keyframes dance {
-  0%, 100% {
-    transform: rotate(0)
-  }
-  25% {
-    transform: rotate(-30deg)
-  }
-  75% {
-    transform: rotate(30deg)
-  }
-}
-
-@keyframes overlay-grow {
-  from {
-    background-color: white;
-    font-size: 0;
-  }
-  to {
-    background-color: rgba(0, 0, 0, .8);
-    font-size: 10em;
-  }
 }
 
