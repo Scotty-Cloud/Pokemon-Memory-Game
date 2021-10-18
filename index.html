@@ -4,41 +4,280 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Find That Pokemon!</title>
-  <link href="style.css" rel="stylesheet">
+  <title>PokemonFinder</title>
+  <script defer src="./app.js"></script>
 </head>
 <body>
-  <h1 class="game-title">Find The Unknown</h1>
-  <div class="game">
-    <div class="gameCard">
-      <div class="cardBack cardFace">
-        <img class="rocketsBall ballTopLeft" src="img/rocketsBall.png">
-        <img class="rocketsBall ballTopRight" src="img/rocketsBall.png">
-        <img class="rocketsBall ballLowLeft" src="img/rocketsBall.png">
-        <img class="rocketsBall ballLowRight" src="img/rocketsBall.png">
-        <img class="qMark" src="img/unown.png"
-      </div>
-      <div class="cardfront cardFace">
+  <h1 class ="gameName">Find-That-Unown</h1>
+<!--   <div class="overlay-text visible">
+    Click to Start
+  </div>
+  <div id="game-over-text" class="overlay-text">
+    GAME OVER
+    <span class="overlay-text-small">Click to Restart</span>
+  </div>
+  <div id="victory-text" class="overlay-text">
+    VICTORY
+    <span class="overlay-text-small">Click to Restart</span>
+  </div> -->
 
+  <div class="gameBoard">
+    <div class="card">
+      <div class="cardBack cardFace">
+        <img class="pokeBall ballTopLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballTopRight" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomRight" src="img/rocketsBall.png.png">
+        <img class="qMarkUnown" src="img/unown.png">
       </div>
+      <div class="cardFront cardFace">
+        <img class="pokeBall ballTopLeft" src="img/masterBall.png">
+        <img class="pokeBall ballTopRight" src="img/masterBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/masterBall.png">
+        <img class="pokeBall cob-web-bottom-right" src="img/masterBall.png">
+        <img class="cardVal" src="img/unownF.png">
       </div>
     </div>
-    <div class="gameCard"></div>
-    <div class="gameCard"></div>
-    <div class="gameCard"></div>
-    <div class="gameCard"></div>
-    <div class="gameCard"></div>
-    <div class="gameCard"></div>
-    <div class="gameCard"></div>
-    <div class="gameCard"></div>
-    <div class="gameCard"></div>
-    <div class="gameCard"></div>
-    <div class="gameCard"></div>
-    <div class="gameCard"></div>
-    <div class="gameCard"></div>
-    <div class="gameCard"></div>
-    <div class="gameCard"></div>
-
+    <div class="card">
+      <div class="cardBack cardFace">
+        <img class="pokeBall ballTopLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballTopRight" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomRight" src="img/rocketsBall.png">
+        <img class="qMarkUnown" src="img/unown.png">
+      </div>
+      <div class="cardFront cardFace">
+        <img class="pokeBall ballTopLeft" src="img/masterBall.png">
+        <img class="pokeBall ballTopRight" src="img/masterBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/masterBall.png">
+        <img class="pokeBall ballBottomRight" src="img/masterBall.png">
+        <img class="cardVal" src="img/unownF.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardBack cardFace">
+        <img class="pokeBall ballTopLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballTopRight" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomRight" src="img/rocketsBall.png">
+        <img class="qMarkUnown" src="img/unown.png">
+      </div>
+      <div class="cardFront cardFace">
+        <img class="pokeBall ballTopLeft" src="img/masterBall.png">
+        <img class="pokeBall ballTopRight" src="img/masterBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/masterBall.png">
+        <img class="pokeBall ballBottomRight" src="img/masterBall.png">
+        <img class="cardVal" src="img/unownH.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardBack cardFace">
+        <img class="pokeBall ballTopLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballTopRight" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomRight" src="img/rocketsBall.png">
+        <img class="qMarkUnown" src="img/unown.png">
+      </div>
+      <div class="cardFront cardFace">
+        <img class="pokeBall ballTopLeft" src="img/masterBall.png">
+        <img class="pokeBall ballTopRight" src="img/masterBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/masterBall.png">
+        <img class="pokeBall ballBottomRight" src="img/masterBall.png">
+        <img class="cardVal" src="img/unownH.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardBack cardFace">
+        <img class="pokeBall ballTopLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballTopRight" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomRight" src="img/rocketsBall.png">
+        <img class="qMarkUnown" src="img/unown.png">
+      </div>
+      <div class="cardFront cardFace">
+        <img class="pokeBall ballTopLeft" src="img/masterBall.png">
+        <img class="pokeBall ballTopRight" src="img/masterBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/masterBall.png">
+        <img class="pokeBall ballBottomRight" src="img/masterBall.png">
+        <img class="cardVal" src="img/unownK.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardBack cardFace">
+        <img class="pokeBall ballTopLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballTopRight" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomRight" src="img/rocketsBall.png">
+        <img class="qMarkUnown" src="img/unown.png">
+      </div>
+      <div class="cardFront cardFace">
+        <img class="pokeBall ballTopLeft" src="img/masterBall.png">
+        <img class="pokeBall ballTopRight" src="img/masterBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/masterBall.png">
+        <img class="pokeBall ballBottomRight" src="img/masterBall.png">
+        <img class="cardVal" src="img/unownK.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardBack cardFace">
+        <img class="pokeBall ballTopLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballTopRight" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomRight" src="img/rocketsBall.png">
+        <img class="qMarkUnown" src="img/unown.png">
+      </div>
+      <div class="cardFront cardFace">
+        <img class="pokeBall ballTopLeft" src="img/masterBall.png">
+        <img class="pokeBall ballTopRight" src="img/masterBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/masterBall.png">
+        <img class="pokeBall ballBottomRight" src="img/masterBall.png">
+        <img class="cardVal" src="img/unownO.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardBack cardFace">
+        <img class="pokeBall ballTopLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballTopRight" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomRight" src="img/rocketsBall.png">
+        <img class="qMarkUnown" src="img/unown.png">
+      </div>
+      <div class="cardFront cardFace">
+        <img class="pokeBall ballTopLeft" src="img/masterBall.png">
+        <img class="pokeBall ballTopRight" src="img/masterBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/masterBall.png">
+        <img class="pokeBall ballBottomRight" src="img/masterBall.png">
+        <img class="cardVal" src="img/unownO.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardBack cardFace">
+        <img class="pokeBall ballTopLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballTopRight" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomRight" src="img/rocketsBall.png">
+        <img class="qMarkUnown" src="img/unown.png">
+      </div>
+      <div class="cardFront cardFace">
+        <img class="pokeBall ballTopLeft" src="img/masterBall.png">
+        <img class="pokeBall ballTopRight" src="img/masterBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/masterBall.png">
+        <img class="pokeBall ballBottomRight" src="img/masterBall.png">
+        <img class="cardVal" src="img/unownP.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardBack cardFace">
+        <img class="pokeBall ballTopLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballTopRight" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomRight" src="img/rocketsBall.png">
+        <img class="qMarkUnown" src="img/unown.png">
+      </div>
+      <div class="cardFront cardFace">
+        <img class="pokeBall ballTopLeft" src="img/masterBall.png">
+        <img class="pokeBall ballTopRight" src="img/masterBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/masterBall.png">
+        <img class="pokeBall ballBottomRight" src="img/masterBall.png">
+        <img class="cardVal" src="img/unownP.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardBack cardFace">
+        <img class="pokeBall ballTopLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballTopRight" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomRight" src="img/rocketsBall.png">
+        <img class="qMarkUnown" src="img/unown.png">
+      </div>
+      <div class="cardFront cardFace">
+        <img class="pokeBall ballTopLeft" src="img/masterBall.png">
+        <img class="pokeBall ballTopRight" src="img/masterBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/masterBall.png">
+        <img class="pokeBall ballBottomRight" src="img/masterBall.png">
+        <img class="cardVal" src="img/unownR.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardBack cardFace">
+        <img class="pokeBall ballTopLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballTopRight" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomRight" src="img/rocketsBall.png">
+        <img class="qMarkUnown" src="img/unown.png">
+      </div>
+      <div class="cardFront cardFace">
+        <img class="pokeBall ballTopLeft" src="img/masterBall.png">
+        <img class="pokeBall ballTopRight" src="img/masterBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/masterBall.png">
+        <img class="pokeBall ballBottomRight" src="img/masterBall.png">
+        <img class="cardVal" src="img/unownR.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardBack cardFace">
+        <img class="pokeBall ballTopLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballTopRight" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomRight" src="img/rocketsBall.png">
+        <img class="qMarkUnown" src="img/unown.png">
+      </div>
+      <div class="cardFront cardFace">
+        <img class="pokeBall ballTopLeft" src="img/masterBall.png">
+        <img class="pokeBall ballTopRight" src="img/masterBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/masterBall.png">
+        <img class="pokeBall ballBottomRight" src="img/masterBall.png">
+        <img class="cardVal" src="img/unownS.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardBack cardFace">
+        <img class="pokeBall ballTopLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballTopRight" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomRight" src="img/rocketsBall.png">
+        <img class="qMarkUnown" src="img/unown.png">
+      </div>
+      <div class="cardFront cardFace">
+        <img class="pokeBall ballTopLeft" src="img/masterBall.png">
+        <img class="pokeBall ballTopRight" src="img/masterBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/masterBall.png">
+        <img class="pokeBall ballBottomRight" src="img/masterBall.png">
+        <img class="cardVal" src="img/unownS.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardBack cardFace">
+        <img class="pokeBall ballTopLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballTopRight" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomRight" src="img/rocketsBall.png">
+        <img class="qMarkUnown" src="img/unown.png">
+      </div>
+      <div class="cardFront cardFace">
+        <img class="pokeBall ballTopLeft" src="img/masterBall.png">
+        <img class="pokeBall ballTopRight" src="img/masterBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/masterBall.png">
+        <img class="pokeBall ballBottomRight" src="img/masterBall.png">
+        <img class="cardVal" src="img/unownZ.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardBack cardFace">
+        <img class="pokeBall ballTopLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballTopRight" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/rocketsBall.png">
+        <img class="pokeBall ballBottomRight" src="img/rocketsBall.png">
+        <img class="qMarkUnown" src="img/unown.png">
+      </div>
+      <div class="cardFront cardFace">
+        <img class="pokeBall ballTopLeft" src="img/masterBall.png">
+        <img class="pokeBall ballTopRight" src="img/masterBall.png">
+        <img class="pokeBall ballBottomLeft" src="img/masterBall.png">
+        <img class="pokeBall ballBottomRight" src="img/masterBall.png">
+        <img class="cardVal" src="img/unownZ.png">
+      </div>
+    </div>
   </div>
 </body>
 </html>
