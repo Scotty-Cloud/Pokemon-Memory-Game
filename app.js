@@ -8,4 +8,13 @@ class AudioController {
     this.backgroundMusic.volume = 0.5;
     this.backgroundMusic.loop = true;
   }
+
+  playMusic() {
+    this.backgroundMusic.play();
+  }
+
+  stopMusic() {
+    this.backgroundMusic.pause();
+    this.backgroundMusic.currentTime = 0;
+  }
 }
