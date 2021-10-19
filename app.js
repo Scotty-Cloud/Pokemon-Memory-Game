@@ -1,5 +1,5 @@
 class AudioController {
-  init () {
+  constructor () {
     this.backgroundMusic = new Audio(sounds/);
     this.flipChime = new Audio(sounds/);
     this.sameCardChime = new Audio(sounds/);
@@ -16,5 +16,32 @@ class AudioController {
   stopMusic() {
     this.backgroundMusic.pause();
     this.backgroundMusic.currentTime = 0;
+  }
+
+  flipSound() {
+    this.flipChime.play();
+  }
+
+  cardMatch() {
+    this.sameCardChime.play();
+  }
+
+  gameWin() {
+    this.winningChime.play();
+  }
+
+  gameEnd(){
+    this.timeOutChime.play();
+  }
+}
+
+class pokemonFind {
+  init(gameTime, card) {
+    this.arrayOfCards = card
+    this.timeOfGame = gameTime
+    this.timeRemaining = gameTime
+    this.timeOfGame = document.getElementById('timeRemaining')
+    this.track = document.getElementById('flips')
+    this.audioController = new AudioController();
   }
 }
