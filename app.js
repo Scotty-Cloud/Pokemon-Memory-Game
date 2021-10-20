@@ -116,4 +116,21 @@ class pokemonFind {
     if(this.cardMatched.length === this.arrayOfCards.length)
     this.win();
   }
+  notMatched(cardA, cardB){
+    this.inPlay = true; 
+    setTimeout(() => {
+      cardA.classList.remove('visible')
+      cardB.classList.remove('visible')
+      this.inPlay = false
+    }, 1000)
+  }
+  cardShuffle(arrayOfCards){
+    for(let i = arrayOfCards.length -1; i > 0; i--){
+      let randomCard = Math.floor(Math.random() * (i + 1))
+      arrayOfCards[randomCard].sameType.order = i;
+      arrayOfCards[i].sameType = randomCard
+
+    }
+  }
+  
 }
