@@ -87,7 +87,7 @@ class pokemonFind {
     });
   }
   flipped(card) {
-    if(this.cardFlipped.(card)){
+    if(this.cardFlipped(card)){
       this.audioController.flip()
       this.numberOfClicks++
       this.track.innerText = this.numberOfClicks
