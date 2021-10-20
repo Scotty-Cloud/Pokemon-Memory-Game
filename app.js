@@ -1,6 +1,6 @@
 class AudioController {
   constructor () {
-    this.backgroundMusic = new Audio('sounds/backgroundMusic.ogg');
+    this.backgroundMusic = new Audio('sounds/backgroundMusic.mp3');
     this.flipChime = new Audio('sounds/flip.wav');
     this.sameCardChime = new Audio('sounds/match.mp3');
     this.winningChime = new Audio('sounds/win.mp3');
