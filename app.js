@@ -62,12 +62,36 @@ class pokemonFind {
     this.track.innerText = this.numberOfClicks
   }
   startTimer() {
-    return Gamepad(() => {
+    return setInterval(() => {
       this.timeRemaining--;
       this.timeOfGame.innerText = this.timeRemaining
       if(this.timeRemaining === 0)
-        this.endGame
+        this.gameEnd
     }, 1000)
   }
-  
+  gameEnd() {
+    clearInterval(this.countdown)
+    this.audioController.gameEnd()
+    document.getElementById('gameOver').classList.add('visible')
+  }
+  unflipped() {
+    this.arrayOfCards.forEach(card => {
+      card.classList.remove('visible')
+      card.classList.remove('pair')
+    });
+  }
+  flipped(card) {
+    if(this.cardFlipped.(card)){
+      this.audioController.flip()
+      this.numberOfClicks++
+      this.track.innerText = this.numberOfClicks
+      card.classList.add('visible')
+
+      if(this.cardCheck) {
+        this.findPair(card)
+      }else {
+        this.cardCheck = card;
+      }
+    }
+  }
 }
