@@ -74,6 +74,12 @@ class pokemonFind {
     this.audioController.gameEnd()
     document.getElementById('gameOver').classList.add('visible')
   }
+  win() {
+    clearInterval(this.countdown)
+    this.audioController.winningChime()
+    document.getElementById('winningText').classList.add('visible')
+  }
+
   unflipped() {
     this.arrayOfCards.forEach(card => {
       card.classList.remove('visible')
@@ -93,5 +99,21 @@ class pokemonFind {
         this.cardCheck = card;
       }
     }
+  }
+  findPair(card) {
+    if(this.sameCard(card) === this.sameCard(this.cardCheck))
+      this.sameType(card, this.cardCheck)
+    else  
+      this.notMatch(card, this.cardCheck)
+      this.cardCheck = null;
+  }
+  sameType(cardA, cardB){
+    this.matchCards.push(cardA)
+    this.matchCards.push(cardB)
+    cardA.classList.add('match')
+    cardB.classList.add('match')
+    this.audioController.match()
+    if(this.cardMatched.length === this.arrayOfCards.length)
+    this.win();
   }
 }
