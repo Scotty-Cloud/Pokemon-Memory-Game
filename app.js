@@ -1,10 +1,10 @@
 class AudioController {
   constructor () {
-    this.backgroundMusic = new Audio(sounds/);
-    this.flipChime = new Audio(sounds/);
-    this.sameCardChime = new Audio(sounds/);
-    this.winningChime = new Audio(sounds/);
-    this.timeOutChime = new Audio(sounds/)
+    this.backgroundMusic = new Audio('sounds/backgroundMusic.ogg');
+    this.flipChime = new Audio('sounds/flip.wav');
+    this.sameCardChime = new Audio('sounds/match.mp3');
+    this.winningChime = new Audio('sounds/win.mp3');
+    this.timeOutChime = new Audio('sounds/timesUp.mp3')
     this.backgroundMusic.volume = 0.5;
     this.backgroundMusic.loop = true;
   }
