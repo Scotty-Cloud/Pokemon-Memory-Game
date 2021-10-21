@@ -4,8 +4,8 @@ class AudioController {
       this.flipChime = new Audio('sounds/flip.wav');
       this.cardMatched = new Audio('sounds/match.mp3');
       this.winChime = new Audio('sounds/win.mp3');
-      this.gameEndChime = new Audio('sounds/timesUp');
-      this.backgroundMusic.volume = 0.5;
+      this.gameEndChime = new Audio('sounds/timesUp.mp3');
+      this.backgroundMusic.volume = 0.1;
       this.backgroundMusic.loop = true;
   }
   playMusic() {
@@ -53,7 +53,7 @@ class findPokemon {
           this.countdown = this.countBegin();
           this.busy = false;
       }, 500)
-      this.unflip();
+     this.unflip();
       this.timer.innerText = this.timeRemaining;
       this.ticker.innerText = this.numberOfClicks;
   }
@@ -79,7 +79,8 @@ class findPokemon {
       this.arrayOfCards.forEach(card => {
           card.classList.remove('visible');
           card.classList.remove('matched');
-      });
+      });console.log('party')
+      
   }
   cardFlip(card) {
       if(this.toFlip(card)) {
@@ -96,10 +97,11 @@ class findPokemon {
       }
   }
   findPair(card) {
-      if(this.sameType(card) === this.sameTypeType(this.checkCard))
+      if(this.sameType(card) === this.sameType(this.checkCard))
           this.pairMatch(card, this.checkCard);
       else 
-          this.notMatch(card, this.checkCard);
+          this.notmatch(card, this.checkCard);
+        // this.notmatch(card, this.checkCard)
 
       this.checkCard = null;
   }
@@ -118,7 +120,7 @@ class findPokemon {
           firstCard.classList.remove('visible');
           secondCard.classList.remove('visible');
           this.busy = false;
-      }, 1000);
+      }, 1000); console.log('party')
   }
   cardShuffle(arrayOfCards) {
       for (let i = arrayOfCards.length - 1; i > 0; i--) {
