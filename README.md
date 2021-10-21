@@ -8,5 +8,4 @@
 
 <technologies used> This web browser based game utilizes coding formats such as HTML, JavaScript and CSS 
 
-
-<Next steps / future plans>
+The next steps I have planend for this game is to have a drop-down box with multiple links that take you to a different version of the game that suits the current season or holiday.
