@@ -79,7 +79,7 @@ class findPokemon {
       this.arrayOfCards.forEach(card => {
           card.classList.remove('visible');
           card.classList.remove('matched');
-      });console.log('party')
+      });
       
   }
   cardFlip(card) {
@@ -146,7 +146,7 @@ if (document.readyState == 'loading') {
 function ready() {
   let overlays = Array.from(document.getElementsByClassName('overlay-text'));
   let cards = Array.from(document.getElementsByClassName('card'));
-  let game = new findPokemon(75, cards);
+  let game = new findPokemon(5, cards);
 
   overlays.forEach(overlay => {
       overlay.addEventListener('click', () => {
