@@ -1,136 +1,161 @@
 class AudioController {
-  constructor () {
-    this.backgroundMusic = new Audio('sounds/backgroundMusic.mp3');
-    this.flipChime = new Audio('sounds/flip.wav');
-    this.sameCardChime = new Audio('sounds/match.mp3');
-    this.winningChime = new Audio('sounds/win.mp3');
-    this.timeOutChime = new Audio('sounds/timesUp.mp3')
-    this.backgroundMusic.volume = 0.5;
-    this.backgroundMusic.loop = true;
+  constructor() {
+      this.backgroundMusic = new Audio('sounds/bgMusic.mp3');
+      this.flipChime = new Audio('sounds/flip.wav');
+      this.cardMatched = new Audio('sounds/match.mp3');
+      this.winChime = new Audio('sounds/win.mp3');
+      this.gameEndChime = new Audio('sounds/timesUp');
+      this.backgroundMusic.volume = 0.5;
+      this.backgroundMusic.loop = true;
   }
-
   playMusic() {
-    this.backgroundMusic.play();
+      this.backgroundMusic.play();
   }
-
-  stopMusic() {
-    this.backgroundMusic.pause();
-    this.backgroundMusic.currentTime = 0;
+  pauseMusic() {
+      this.backgroundMusic.pause();
+      this.backgroundMusic.currentTime = 0;
   }
-
-  flipSound() {
-    this.flipChime.play();
+  flipCard() {
+      this.flipChime.play();
   }
-
-  cardMatch() {
-    this.sameCardChime.play();
+  matched() {
+      this.cardMatched.play();
   }
-
-  gameWin() {
-    this.winningChime.play();
+  win() {
+      this.pauseMusic();
+      this.winChime.play();
   }
-
-  gameEnd(){
-    this.timeOutChime.play();
+  gameEnd() {
+      this.pauseMusic();
+      this.gameEndChime.play();
   }
 }
 
-class pokemonFind {
-  init(gameTime, card) {
-    this.arrayOfCards = card
-    this.timeOfGame = gameTime
-    this.timeRemaining = gameTime
-    this.timeOfGame = document.getElementById('timeRemaining')
-    this.track = document.getElementById('flips')
-    this.audioController = new AudioController();
+class findPokemon {
+  constructor(totalTime, cards) {
+      this.arrayOfCards = cards;
+      this.totalTime = totalTime;
+      this.timeRemaining = totalTime;
+      this.tracker = document.getElementById('time-remaining')
+      this.timer = document.getElementById('flips');
+      this.audioController = new AudioController();
   }
 
-  gameBegin() {
-    this.numberOfClicks = 0
-    this.timeRemaining = gameTime
-    this.checkCard = null;
-    this.cardMatched = []
-    this.inPlay = true
-    gameTimeEnd(() => {
-      this.audioController.playMusic()
-      this.shuffleCard(this.arrayOfCards)
-      this.timer = this.startTimer()
-      this.inPlay = false
-    }, 500) 
-    this.unflipped()
-    this.timeOfGame.innerText = this.timeRemaining
-    this.track.innerText = this.numberOfClicks
+  playgame() {
+      this.numberOfClicks = 0;
+      this.timeRemaining = this.totalTime;
+      this.checkCard = null;
+      this.cardMatch = [];
+      this.inplay = true;
+      setTimeout(() => {
+          this.audioController.playMusic();
+          this.cardShuffle(this.arrayOfCards);
+          this.countdown = this.countBegin();
+          this.inplay = false;
+      }, 500)
+      this.unflip();
+      this.timer.innerText = this.timeRemaining;
+      this.ticker.innerText = this.numberOfClicks;
   }
-  startTimer() {
-    return setInterval(() => {
-      this.timeRemaining--;
-      this.timeOfGame.innerText = this.timeRemaining
-      if(this.timeRemaining === 0)
-        this.gameEnd
-    }, 1000)
+  countBegin() {
+      return setInterval(() => {
+          this.timeRemaining--;
+          this.timer.innerText = this.timeRemaining;
+          if(this.timeRemaining === 0)
+              this.gameEnd();
+      }, 1000);
   }
   gameEnd() {
-    clearInterval(this.countdown)
-    this.audioController.gameEnd()
-    document.getElementById('gameOver').classList.add('visible')
+      clearInterval(this.countdown);
+      this.audioController.gameEnd();
+      document.getElementById('game-over-text').classList.add('visible');
   }
   win() {
-    clearInterval(this.countdown)
-    this.audioController.winningChime()
-    document.getElementById('winningText').classList.add('visible')
+      clearInterval(this.countdown);
+      this.audioController.win();
+      document.getElementById('victory-text').classList.add('visible');
   }
-
-  unflipped() {
-    this.arrayOfCards.forEach(card => {
-      card.classList.remove('visible')
-      card.classList.remove('pair')
-    });
+  unFlip() {
+      this.arrayOfCards.forEach(card => {
+          card.classList.remove('visible');
+          card.classList.remove('matched');
+      });
   }
-  flipped(card) {
-    if(this.cardFlipped(card)){
-      this.audioController.flip()
-      this.numberOfClicks++
-      this.track.innerText = this.numberOfClicks
-      card.classList.add('visible')
+  cardFlip(card) {
+      if(this.toFlip(card)) {
+          this.audioController.flipCard();
+          this.numberOfClicks++;
+          this.ticker.innerText = this.numberOfClicks;
+          card.classList.add('visible');
 
-      if(this.cardCheck) {
-        this.findPair(card)
-      }else {
-        this.cardCheck = card;
+          if(this.checkCard) {
+              this.findPair(card);
+          } else {
+              this.checkCard = card;
+          }
       }
-    }
   }
   findPair(card) {
-    if(this.sameCard(card) === this.sameCard(this.cardCheck))
-      this.sameType(card, this.cardCheck)
-    else  
-      this.notMatch(card, this.cardCheck)
-      this.cardCheck = null;
-  }
-  sameType(cardA, cardB){
-    this.matchCards.push(cardA)
-    this.matchCards.push(cardB)
-    cardA.classList.add('match')
-    cardB.classList.add('match')
-    this.audioController.match()
-    if(this.cardMatched.length === this.arrayOfCards.length)
-    this.win();
-  }
-  notMatched(cardA, cardB){
-    this.inPlay = true; 
-    setTimeout(() => {
-      cardA.classList.remove('visible')
-      cardB.classList.remove('visible')
-      this.inPlay = false
-    }, 1000)
-  }
-  cardShuffle(arrayOfCards){
-    for(let i = arrayOfCards.length -1; i > 0; i--){
-      let randomCard = Math.floor(Math.random() * (i + 1))
-      arrayOfCards[randomCard].sameType.order = i;
-      arrayOfCards[i].sameType = randomCard
+      if(this.sameType(card) === this.sameTypeType(this.checkCard))
+          this.pairMatch(card, this.checkCard);
+      else 
+          this.notMatch(card, this.checkCard);
 
-    }
+      this.checkCard = null;
   }
-  
+  pairMatch(firstCard, secondCard) {
+      this.cardMatch.push(firstCard);
+      this.cardMatch.push(secondCard);
+      firstCard.classList.add('matched');
+      secondCard.classList.add('matched');
+      this.audioController.matched();
+      if(this.cardMatch.length === this.arrayOfCards.length)
+          this.victory();
+  }
+  notmatch(firstCard, secondCard) {
+      this.inplay = true;
+      setTimeout(() => {
+          firstCard.classList.remove('visible');
+          secondCard.classList.remove('visible');
+          this.inplay = false;
+      }, 1000);
+  }
+  cardShuffle(arrayOfCards) {
+      for (let i = arrayOfCards.length - 1; i > 0; i--) {
+          let randCard = Math.floor(Math.random() * (i + 1));
+          arrayOfCards[randCard].style.order = i;
+          arrayOfCards[i].style.order = randCard;
+      }
+  }
+  sameType(card) {
+      return card.getElementsByClassName('cardVal')[0].src;
+  }
+  toFlip(card) {
+      return !this.inplay && !this.cardMatch.includes(card) && card !== this.checkCard;
+  }
+}
+
+if (document.readyState == 'loading') {
+  document.addEventListener('DOMContentLoaded', ready);
+} else {
+  ready();
+}
+
+function ready() {
+  let overlays = Array.from(document.getElementsByClassName('overlay-text'));
+  let cards = Array.from(document.getElementsByClassName('card'));
+  let game = new MixOrMatch(100, cards);
+
+  overlays.forEach(overlay => {
+      overlay.addEventListener('click', () => {
+          overlay.classList.remove('visible');
+          game.startGame();
+      });
+  });
+
+  cards.forEach(card => {
+      card.addEventListener('click', () => {
+          game.flipCard(card);
+      });
+  });
 }
