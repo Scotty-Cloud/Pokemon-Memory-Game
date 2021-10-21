@@ -53,7 +53,7 @@ class findPokemon {
           this.countdown = this.countBegin();
           this.busy = false;
       }, 500)
-     this.unflip();
+     this.unFlip();
       this.timer.innerText = this.timeRemaining;
       this.ticker.innerText = this.numberOfClicks;
   }
@@ -112,7 +112,7 @@ class findPokemon {
       secondCard.classList.add('matched');
       this.audioController.matched();
       if(this.cardMatch.length === this.arrayOfCards.length)
-          this.victory();
+          this.win();
   }
   notmatch(firstCard, secondCard) {
       this.busy = true;
@@ -120,7 +120,7 @@ class findPokemon {
           firstCard.classList.remove('visible');
           secondCard.classList.remove('visible');
           this.busy = false;
-      }, 1000); console.log('party')
+      }, 1000); 
   }
   cardShuffle(arrayOfCards) {
       for (let i = arrayOfCards.length - 1; i > 0; i--) {

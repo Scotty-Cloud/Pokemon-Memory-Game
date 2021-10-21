@@ -163,7 +163,7 @@ body {
   animation: overlay-grow 500ms forwards;
 }
  
- @keyframes dance {
+ /* @keyframes dance {
   0%, 100% {
     transform: rotate(0)
   }
@@ -173,7 +173,7 @@ body {
   75% {
     transform: rotate(30deg)
   }
-}
+} */
 
 @keyframes overlay-grow {
   from {
@@ -181,7 +181,7 @@ body {
     font-size: 0;
   }
   to {
-    background-color: white;
+    background-color: rgb(164, 108, 108);
     font-size: 10em;
   }
 }
