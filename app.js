@@ -144,18 +144,18 @@ if (document.readyState == 'loading') {
 function ready() {
   let overlays = Array.from(document.getElementsByClassName('overlay-text'));
   let cards = Array.from(document.getElementsByClassName('card'));
-  let game = new MixOrMatch(100, cards);
+  let game = new findPokemon(100, cards);
 
   overlays.forEach(overlay => {
       overlay.addEventListener('click', () => {
           overlay.classList.remove('visible');
-          game.startGame();
+          game.playgame();
       });
   });
 
   cards.forEach(card => {
       card.addEventListener('click', () => {
-          game.flipCard(card);
+          game.cardFlip(card);
       });
   });
 }

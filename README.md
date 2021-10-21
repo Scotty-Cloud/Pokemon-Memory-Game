@@ -4,8 +4,7 @@
 <link to deployed game>
 
 
-<images and screen shots of game>
-
+<img src="https://i.imgur.com/3HfmzkZ.png">
 
 <technologies used> This web browser based game utilizes coding formats such as HTML, JavaScript and CSS 
 
