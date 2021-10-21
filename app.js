@@ -36,8 +36,8 @@ class findPokemon {
       this.arrayOfCards = cards;
       this.totalTime = totalTime;
       this.timeRemaining = totalTime;
-      this.tracker = document.getElementById('time-remaining')
-      this.timer = document.getElementById('flips');
+      this.timer = document.getElementById('time-remaining')
+      this.ticker = document.getElementById('flips');
       this.audioController = new AudioController();
   }
 
@@ -46,12 +46,12 @@ class findPokemon {
       this.timeRemaining = this.totalTime;
       this.checkCard = null;
       this.cardMatch = [];
-      this.inplay = true;
+      this.busy = true;
       setTimeout(() => {
           this.audioController.playMusic();
           this.cardShuffle(this.arrayOfCards);
           this.countdown = this.countBegin();
-          this.inplay = false;
+          this.busy = false;
       }, 500)
       this.unflip();
       this.timer.innerText = this.timeRemaining;
@@ -113,11 +113,11 @@ class findPokemon {
           this.victory();
   }
   notmatch(firstCard, secondCard) {
-      this.inplay = true;
+      this.busy = true;
       setTimeout(() => {
           firstCard.classList.remove('visible');
           secondCard.classList.remove('visible');
-          this.inplay = false;
+          this.busy = false;
       }, 1000);
   }
   cardShuffle(arrayOfCards) {
@@ -131,7 +131,7 @@ class findPokemon {
       return card.getElementsByClassName('cardVal')[0].src;
   }
   toFlip(card) {
-      return !this.inplay && !this.cardMatch.includes(card) && card !== this.checkCard;
+      return !this.busy && !this.cardMatch.includes(card) && card !== this.checkCard;
   }
 }
 
