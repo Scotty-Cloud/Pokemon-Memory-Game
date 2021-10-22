@@ -26,6 +26,8 @@ This is a Pokemon memory card theme game. It is up to you to flip the cards and 
 
 - Implement different themes
    - themes relate to current season or holiday
+  
+- add mobile compatibility 
 
 ⚡️ Credits ⚡️
 ===========
