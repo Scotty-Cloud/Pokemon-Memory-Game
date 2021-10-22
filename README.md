@@ -1,6 +1,5 @@
-<img src="img/pika.png /> Pokemon Memory Game
+ Pokemon Memory Game
 ====================
---------------------------------------------------
 
 This is a Pokemon memory card theme game. It is up to you to flip the cards and find the correct matching Pokemon in order to win! 
 
@@ -14,12 +13,12 @@ This is a Pokemon memory card theme game. It is up to you to flip the cards and 
 
 💻 Technologies Used 💻
 ======================== 
-------------------------
+
 - HTML 
 - CSS 
 - JavaScript
   
-------------------------------------------------------
+
 
 Future Plans
 =============
