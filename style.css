@@ -177,11 +177,11 @@ body {
 
 @keyframes overlay-grow {
   from {
-    background-color: blue;
+    background: radial-gradient(circle, rgba(184,224,120,1) 0%, rgba(178,231,161,1) 45%, rgba(121,189,158,1) 100%);
     font-size: 0;
   }
   to {
-    background-color: rgb(164, 108, 108);
+   background: radial-gradient(circle, rgba(184,124,26,1) 0%, rgba(159,43,65,1) 100%);
     font-size: 10em;
   }
 }
