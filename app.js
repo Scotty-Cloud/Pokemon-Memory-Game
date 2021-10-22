@@ -101,7 +101,6 @@ class findPokemon {
           this.pairMatch(card, this.checkCard);
       else 
           this.notmatch(card, this.checkCard);
-        // this.notmatch(card, this.checkCard)
 
       this.checkCard = null;
   }
@@ -142,6 +141,12 @@ if (document.readyState == 'loading') {
 } else {
   ready();
 }
+
+const lMdM = document.getElementById('lMdM');
+
+lMdM.addEventListener('click', () => {
+	document.body.classList.toggle('dark');
+});
 
 
 function ready() {
