@@ -2,15 +2,18 @@
   box-sizing: border-box;
 }
 
+`
 html {
   min-height: 100vh;
 
 }
 
+
 body {
   margin: 0;
   background:radial-gradient(#00d4ff, #3a3293);
 }
+
 
 .gameName {
   color: navy;
@@ -20,16 +23,19 @@ body {
   font-size: 72px;
 }
 
+
 .game-info-container {
   grid-column: 1 / -1;
   display: flex;
   justify-content: space-between;
 }
 
+
 .game-info {
   color: navy;
   font-size: 25px;
 }
+
 
 .game-container {
   margin: 50px auto;
@@ -40,6 +46,7 @@ body {
   perspective: 500px;
 }
 
+
 .gameBoard {
   margin: 50px auto;
   display: grid;
@@ -49,11 +56,13 @@ body {
   perspective: 4750px;
 }
 
+
 .card {
   position: relative;
   height: 150px;
   width: 150px;
 }
+
 
 .cardFace {
   position: absolute;
@@ -70,14 +79,15 @@ body {
   backface-visibility: hidden;
 }
 
+
 .card.visible .cardBack {
   transform: rotateY(-180deg); 
 }
 
+
 .card.visible .cardFront {
   transform: rotateY(0); 
 }
-
 
 
 .cardBack {
@@ -86,6 +96,7 @@ body {
   transform: rotateY(0); 
 }
 
+
 .pokeBall {
   position: absolute;
   transition: width 100ms ease-in-out, height 100ms ease-in-out;
@@ -93,30 +104,36 @@ body {
   height: 47px;
 }
 
+
 .cardFace:hover .pokeBall {
   width: 52px;
   height: 52px;
 }
+
 
 .ballTopLeft {
   top: 0;
   left: 0;
 }
 
+
 .ballTopRight {
   top: 0;
   right: 0;
 }
+
 
 .ballBottomLeft {
   bottom: 0;
   left: 0;
 }
 
+
 .ballBottomRight {
   bottom: 0;
   right: 0;
 }
+
 
 .qMarkUnown {
   align-self: flex-start;
@@ -131,12 +148,12 @@ body {
 }
 
 
-
 .cardFront {
   background-color:#6265a9;
   border-color: black;
   transform: rotateY(180deg);
 }
+
 
 .overlay-text {
   top: 0;
@@ -162,18 +179,6 @@ body {
   display: flex;
   animation: overlay-grow 500ms forwards;
 }
- 
- /* @keyframes dance {
-  0%, 100% {
-    transform: rotate(0)
-  }
-  25% {
-    transform: rotate(-30deg)
-  }
-  75% {
-    transform: rotate(30deg)
-  }
-} */
 
 @keyframes overlay-grow {
   from {
