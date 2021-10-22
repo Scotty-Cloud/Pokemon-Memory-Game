@@ -143,6 +143,7 @@ if (document.readyState == 'loading') {
   ready();
 }
 
+
 function ready() {
   let overlays = Array.from(document.getElementsByClassName('overlay-text'));
   let cards = Array.from(document.getElementsByClassName('card'));
@@ -160,4 +161,5 @@ function ready() {
           game.cardFlip(card);
       });
   });
+
 }
