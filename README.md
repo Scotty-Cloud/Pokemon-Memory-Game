@@ -22,12 +22,12 @@ This is a Pokemon memory card theme game. It is up to you to flip the cards and 
 
 💫 Future Plans 💫
 =============
-- Add a navigation bar
+- [ ] Add a navigation bar
 
-- Implement different themes
+- [ ] Implement different themes
    - themes relate to current season or holiday
   
-- add mobile compatibility 
+- [ ] add mobile compatibility 
 
 ⚡️ Credits ⚡️
 ===========
